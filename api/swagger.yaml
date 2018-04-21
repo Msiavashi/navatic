@@ -4,827 +4,66 @@ info:
   description: "No description"
   version: "1.0.0"
   title: "navatic"
-  contact: {}
-tags:
-- name: "public"
-- name: "admin"
-- name: "user"
-- name: "supervisor"
+consumes:
+- "application/json"
+produces:
+- "application/json"
 paths:
-  /admin/advertise:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminAdvertise"
-      parameters:
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
+  /login:
     post:
-      tags:
-      - "admin"
-      operationId: "postAdminAdvertise"
-      consumes:
-      - "application/json"
+      consumes: []
       parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation6"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/advertise/{aid}:
-    delete:
-      tags:
-      - "admin"
-      operationId: "deleteAdminAdvertiseAid"
-      parameters:
-      - name: "aid"
-        in: "path"
+      - name: "body"
+        in: "body"
         required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminAdvertiseAid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "aid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
         schema:
-          $ref: "#/definitions/anonymousRepresentation7"
+          type: "object"
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/category:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminCategory"
-      parameters:
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
+  /register:
     post:
-      tags:
-      - "admin"
-      operationId: "postAdminCategory"
-      consumes:
-      - "application/json"
+      consumes: []
       parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation4"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/category/{cid}:
-    delete:
-      tags:
-      - "admin"
-      operationId: "deleteAdminCategoryCid"
-      parameters:
-      - name: "cid"
-        in: "path"
+      - name: "body"
+        in: "body"
         required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminCategoryCid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "cid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
         schema:
-          $ref: "#/definitions/anonymousRepresentation5"
+          type: "object"
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/city:
+  /news:
     get:
-      tags:
-      - "admin"
-      operationId: "getAdminCity"
       parameters:
       - name: "pagesize"
         in: "query"
         required: false
         type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    post:
-      tags:
-      - "admin"
-      operationId: "postAdminCity"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation16"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/city/{cid}:
-    delete:
-      tags:
-      - "admin"
-      operationId: "deleteAdminCityCid"
-      parameters:
-      - name: "cid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminCityCid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "cid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation17"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/event:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminEvent"
-      parameters:
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
       - name: "pagenum"
         in: "query"
         required: false
         type: "number"
-        format: "double"
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    post:
-      tags:
-      - "admin"
-      operationId: "postAdminEvent"
-      parameters: []
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/event/{eid}:
-    delete:
-      tags:
-      - "admin"
-      operationId: "deleteAdminEventEid"
-      parameters:
-      - name: "eid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "eid"
-        in: "query"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminEventEid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "eid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation10"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/event/{eid}/sans:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminEventEidSans"
-      parameters:
-      - name: "eid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/news:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminNews"
-      parameters:
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    post:
-      tags:
-      - "admin"
-      operationId: "postAdminNews"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation8"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/news/{nid}:
-    delete:
-      tags:
-      - "admin"
-      operationId: "deleteAdminNewsNid"
-      parameters:
-      - name: "nid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "nid"
-        in: "query"
-        required: true
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminNewsNid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "nid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation9"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/payment/rollback:
-    post:
-      tags:
-      - "admin"
-      operationId: "postAdminPaymentRollback"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation13"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/place:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminPlace"
-      parameters:
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenumber"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    post:
-      tags:
-      - "admin"
-      operationId: "postAdminPlace"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation11"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/place/{pid}:
-    delete:
-      tags:
-      - "admin"
-      operationId: "deleteAdminPlacePid"
-      parameters:
-      - name: "pid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "pid"
-        in: "query"
-        required: true
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminPlacePid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "pid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation12"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/sans:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminSans"
-      parameters:
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    post:
-      tags:
-      - "admin"
-      operationId: "postAdminSans"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation14"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/sans/{sid}:
-    get:
-      tags:
-      - "admin"
-      summary: "single sans status"
-      operationId: "getAdminSansSid"
-      parameters:
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    delete:
-      tags:
-      - "admin"
-      operationId: "deleteAdminSansSid"
-      parameters:
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminSansSid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation15"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/sans/{sid}/orders:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminSansSidOrders"
-      parameters:
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/sans/{sid}/tickets:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminSansSidTickets"
-      parameters:
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/state:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminState"
-      parameters:
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    post:
-      tags:
-      - "admin"
-      operationId: "postAdminState"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation18"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/state/{sid}:
-    delete:
-      tags:
-      - "admin"
-      operationId: "deleteAdminStateSid"
-      parameters:
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminStateSid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation19"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/user/{uid}:
-    get:
-      tags:
-      - "admin"
-      summary: "get user by phone number"
-      operationId: "getAdminUserUid"
-      parameters:
-      - name: "uid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-    patch:
-      tags:
-      - "admin"
-      operationId: "patchAdminUserUid"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "uid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation3"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /admin/users:
-    get:
-      tags:
-      - "admin"
-      operationId: "getAdminUsers"
-      parameters:
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Admin"
-  /advertises:
-    get:
-      tags:
-      - "public"
-      operationId: "getAdvertises"
-      parameters: []
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Public"
   /categories:
     get:
-      tags:
-      - "public"
-      operationId: "getCategories"
       parameters: []
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Public"
-  /cities:
-    get:
-      tags:
-      - "public"
-      operationId: "getCities"
-      parameters: []
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Public"
-  /event/{eid}:
-    get:
-      tags:
-      - "public"
-      operationId: "getEventEid"
-      parameters:
-      - name: "eid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Public"
-  /event/{eid}/sans:
-    get:
-      tags:
-      - "public"
-      operationId: "getEventEidSans"
-      parameters:
-      - name: "eid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "city"
-        in: "query"
-        required: false
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Public"
-  /event/{eid}/sans/{sid}/place/{pid}:
-    get:
-      tags:
-      - "user"
-      operationId: "getEventEidSansSidPlacePid"
-      parameters:
-      - name: "eid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "pid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "User"
   /events:
     get:
-      tags:
-      - "public"
-      operationId: "getEvents"
       parameters:
       - name: "pagesize"
         in: "query"
         required: false
         type: "number"
-        format: "double"
       - name: "pagenum"
         in: "query"
         required: false
         type: "number"
-        format: "double"
       - name: "city"
         in: "query"
         required: false
@@ -840,333 +79,91 @@ paths:
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Public"
-  /login:
-    post:
-      tags:
-      - "public"
-      operationId: "postLogin"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Public"
-  /news:
+  /event/{eid}/sans:
     get:
-      tags:
-      - "public"
-      operationId: "getNews"
       parameters:
-      - name: "pagesize"
+      - name: "city"
         in: "query"
         required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
+        type: "string"
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Public"
+    parameters:
+    - name: "eid"
+      in: "path"
+      required: true
+      type: "string"
   /places:
     get:
-      tags:
-      - "public"
-      operationId: "getPlaces"
       parameters:
       - name: "pagesize"
         in: "query"
         required: false
         type: "number"
-        format: "double"
       - name: "pagenum"
         in: "query"
         required: false
         type: "number"
-        format: "double"
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Public"
-  /register:
-    post:
-      tags:
-      - "public"
-      operationId: "postRegister"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation2"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Public"
   /subscribe:
     post:
-      tags:
-      - "public"
-      operationId: "postSubscribe"
       parameters: []
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Public"
-  /supervisor/sans/{sid}/tickets:
+  /advertises:
     get:
-      tags:
-      - "supervisor"
-      operationId: "getSupervisorSansSidTickets"
-      parameters:
-      - name: "sid"
-        in: "path"
-        required: true
-        type: "string"
+      parameters: []
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Supervisor"
-  /supervisor/ticket/enter:
-    post:
-      tags:
-      - "supervisor"
-      operationId: "postSupervisorTicketEnter"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation24"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Supervisor"
-  /supervisor/ticket/verify:
-    post:
-      tags:
-      - "supervisor"
-      operationId: "postSupervisorTicketVerify"
-      consumes:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation23"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "Supervisor"
-  /user/order/{oid}/pay:
-    post:
-      tags:
-      - "user"
-      operationId: "postUserOrderOidPay"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "oid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation21"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "User"
-  /user/{uid}/order:
-    post:
-      tags:
-      - "user"
-      operationId: "postUserUidOrder"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "uid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation20"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "User"
-  /user/{uid}/order/{oid}/tickets:
-    get:
-      tags:
-      - "user"
-      operationId: "getUserUidOrderOidTickets"
-      parameters:
-      - name: "uid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "oid"
-        in: "path"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "User"
-  /user/{uid}/orders:
-    get:
-      tags:
-      - "user"
-      operationId: "getUserUidOrders"
-      parameters:
-      - name: "uid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "string"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "User"
-  /user/{uid}/payments:
-    get:
-      tags:
-      - "user"
-      operationId: "getUserUidPayments"
-      parameters:
-      - name: "uid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "User"
-  /user/{uid}/renderpdf:
-    post:
-      tags:
-      - "user"
-      operationId: "postUserUidRenderpdf"
-      consumes:
-      - "application/json"
-      parameters:
-      - name: "uid"
-        in: "path"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/anonymousRepresentation22"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "User"
-  /user/{uid}/tickets:
-    get:
-      tags:
-      - "user"
-      operationId: "getUserUidTickets"
-      parameters:
-      - name: "uid"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "pagesize"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      - name: "pagenum"
-        in: "query"
-        required: false
-        type: "number"
-        format: "double"
-      responses:
-        200:
-          description: "Status 200"
-      x-swagger-router-controller: "User"
   /verify:
     post:
-      tags:
-      - "public"
-      operationId: "postVerify"
       parameters: []
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Public"
+  /cities:
+    get:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+  /event/{eid}:
+    get:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "eid"
+      in: "path"
+      required: true
+      type: "string"
   /{oid}/redirect:
     post:
-      tags:
-      - "public"
-      operationId: "postOidRedirect"
       consumes:
       - "multipart/form-data"
       parameters:
-      - name: "oid"
-        in: "path"
-        required: true
-        type: "string"
       - name: "status"
         in: "formData"
         required: false
         type: "number"
-        format: "double"
       - name: "transId"
         in: "formData"
         required: false
         type: "number"
-        format: "double"
       - name: "factorNumber"
         in: "formData"
         required: false
         type: "number"
-        format: "double"
       - name: "cardNumber"
         in: "formData"
         required: false
         type: "number"
-        format: "double"
       - name: "message"
         in: "formData"
         required: false
@@ -1174,53 +171,659 @@ paths:
       responses:
         200:
           description: "Status 200"
-      x-swagger-router-controller: "Public"
-definitions:
-  anonymousRepresentation:
-    type: "object"
-  anonymousRepresentation2:
-    type: "object"
-  anonymousRepresentation3:
-    type: "object"
-  anonymousRepresentation4:
-    type: "object"
-  anonymousRepresentation5:
-    type: "object"
-  anonymousRepresentation6:
-    type: "object"
-  anonymousRepresentation7:
-    type: "object"
-  anonymousRepresentation8:
-    type: "object"
-  anonymousRepresentation9:
-    type: "object"
-  anonymousRepresentation10:
-    type: "object"
-  anonymousRepresentation11:
-    type: "object"
-  anonymousRepresentation12:
-    type: "object"
-  anonymousRepresentation13:
-    type: "object"
-  anonymousRepresentation14:
-    type: "object"
-  anonymousRepresentation15:
-    type: "object"
-  anonymousRepresentation16:
-    type: "object"
-  anonymousRepresentation17:
-    type: "object"
-  anonymousRepresentation18:
-    type: "object"
-  anonymousRepresentation19:
-    type: "object"
-  anonymousRepresentation20:
-    type: "object"
-  anonymousRepresentation21:
-    type: "object"
-  anonymousRepresentation22:
-    type: "object"
-  anonymousRepresentation23:
-    type: "object"
-  anonymousRepresentation24:
-    type: "object"
+    parameters:
+    - name: "oid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/users:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/user/{uid}:
+    get:
+      summary: "get user by phone number"
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "uid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/sans/{sid}/tickets:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "sid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/category:
+    get:
+      parameters:
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/category/{cid}:
+    delete:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "cid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/advertise:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/advertise/{aid}:
+    delete:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "aid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/news:
+    get:
+      parameters:
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/news/{nid}:
+    delete:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "nid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/event:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    post:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+  /admin/event/{eid}:
+    delete:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "eid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/place:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenumber"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/place/{pid}:
+    delete:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "pid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/payment/rollback:
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/sans/{sid}/orders:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "sid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/sans:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/sans/{sid}:
+    get:
+      summary: "single sans status"
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    delete:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "sid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/city:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "Status 200"
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/city/{cid}:
+    delete:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "cid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/state:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /admin/state/{sid}:
+    delete:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    patch:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "sid"
+      in: "path"
+      required: true
+      type: "string"
+  /admin/event/{eid}/sans:
+    get:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "eid"
+      in: "path"
+      required: true
+      type: "string"
+  /user/{uid}/payments:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "uid"
+      in: "path"
+      required: true
+      type: "string"
+  /user/{uid}/tickets:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "number"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "uid"
+      in: "path"
+      required: true
+      type: "string"
+  /user/{uid}/orders:
+    get:
+      parameters:
+      - name: "pagesize"
+        in: "query"
+        required: false
+        type: "number"
+      - name: "pagenum"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "uid"
+      in: "path"
+      required: true
+      type: "string"
+  /user/{uid}/order:
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "uid"
+      in: "path"
+      required: true
+      type: "string"
+  /user/order/{oid}/pay:
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "oid"
+      in: "path"
+      required: true
+      type: "string"
+  /user/{uid}/order/{oid}/tickets:
+    get:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "uid"
+      in: "path"
+      required: true
+      type: "string"
+    - name: "oid"
+      in: "path"
+      required: true
+      type: "string"
+  /user/{uid}/renderpdf:
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "uid"
+      in: "path"
+      required: true
+      type: "string"
+  /event/{eid}/sans/{sid}/place/{pid}:
+    get:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "eid"
+      in: "path"
+      required: true
+      type: "string"
+    - name: "sid"
+      in: "path"
+      required: true
+      type: "string"
+    - name: "pid"
+      in: "path"
+      required: true
+      type: "string"
+  /supervisor/sans/{sid}/tickets:
+    get:
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+    parameters:
+    - name: "sid"
+      in: "path"
+      required: true
+      type: "string"
+  /supervisor/ticket/verify:
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
+  /supervisor/ticket/enter:
+    post:
+      consumes: []
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+      responses:
+        200:
+          description: "Status 200"
